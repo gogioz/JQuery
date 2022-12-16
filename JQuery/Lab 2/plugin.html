@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Box Animator</title>
+    </head>
+    <body>
+        <button class="dark-mode">Try dark mode</button>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita rerum labore totam id! Placeat et eius accusantium, optio dignissimos exercitationem quibusdam incidunt minima impedit dolor culpa necessitatibus eveniet atque corporis!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae accusantium blanditiis quas ex? Non animi pariatur reprehenderit aliquid itaque repellat, eveniet necessitatibus molestiae sed, excepturi amet vero beatae eligendi sequi.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt similique dignissimos dolore nulla aut, ducimus eaque illum nobis molestias id, asperiores mollitia. Ducimus reiciendis impedit est voluptatem excepturi eaque nesciunt.
+        </p>
+        <script type="text/javascript" src="./js/jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="./js/box-animator.js"></script>
+        <script>
+            let itsDark = false;
+            $.fn.darkMode = function () {
+                if (!itsDark) {
+                    this.css("color", "white");
+                    this.css("backgroundColor", "black");
+                    itsDark = true;
+                } else {
+                    this.css("color", "black");
+                    this.css("backgroundColor", "white");
+                    itsDark = false;
+                }
+            };
+
+            $(".dark-mode").click(function () {
+                $("body").darkMode();
+            });
+        </script>
+    </body>
+</html>
